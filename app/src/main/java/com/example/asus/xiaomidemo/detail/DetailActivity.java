@@ -10,12 +10,17 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+//import androidx.appcompat.app.AlertDialog;
+//import androidx.appcompat.app.AppCompatActivity;
+//import androidx.recyclerview.widget.LinearLayoutManager;
+//import androidx.viewpager.widget.ViewPager;
+//import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -39,9 +44,9 @@ import com.hymane.expandtextview.ExpandTextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//// import butterknife.BindView;
+//// import butterknife.ButterKnife;
+//// import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/10/23.
@@ -51,27 +56,27 @@ public class DetailActivity extends AppCompatActivity implements RefreshManager.
 
 
     AppInfo appInfo;
-    @BindView(R.id.detail_iv_icon)
+
     ImageView mIvIcon;
-    @BindView(R.id.detail_tv_name)
+
     TextView mTvName;
-    @BindView(R.id.detail_tv_company)
+
     TextView mTvCompany;
-    @BindView(R.id.detail_tv_decription)
+
     ExpandTextView mTvDecription;
-    @BindView(R.id.detail_tv_updateLog)
+
     ExpandTextView mTvUpdateLog;
-    @BindView(R.id.detail_rv_image)
+
     RecyclerView mRvImage;
-    @BindView(R.id.detail_tv_download)
+
     TextView mTvDownload;
-    @BindView(R.id.detail_tv_title)
+
     TextView mTvTitle;
-    @BindView(R.id.search_toolbar)
+
     Toolbar mToolbar;
-    @BindView(R.id.detail_tv_commentNum)
+
     TextView mTvCommentNum;
-    @BindView(R.id.detail_tv_permission)
+
     TextView mTvPermission;
 
     private String appName;
@@ -85,7 +90,7 @@ public class DetailActivity extends AppCompatActivity implements RefreshManager.
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        ButterKnife.bind(this);
+//       //  // ButterKnife.bind(this);
 
         RefreshManager.getInstance().register(this);
         isNotLoadBitmap = SettingManager.getInstance(this).isSaveTraffic();
@@ -124,6 +129,30 @@ public class DetailActivity extends AppCompatActivity implements RefreshManager.
 
     private void initView() {
 
+
+        mIvIcon = findViewById(R.id.detail_iv_icon);
+
+        mTvName = findViewById(R.id.detail_tv_name);
+
+        mTvCompany = findViewById(R.id.detail_tv_company);
+
+        mTvDecription = findViewById(R.id.detail_tv_decription);
+
+        mTvUpdateLog = findViewById(R.id.detail_tv_updateLog);
+
+        mRvImage = findViewById(R.id.detail_rv_image);
+
+        mTvDownload = findViewById(R.id.detail_tv_download);
+
+        mTvTitle = findViewById(R.id.detail_tv_title);
+
+        mToolbar = findViewById(R.id.search_toolbar);
+
+        mTvCommentNum = findViewById(R.id.detail_tv_commentNum);
+
+        mTvPermission =  findViewById(R.id.detail_tv_permission);
+
+
         setSupportActionBar(mToolbar);
 
         final AppInfo appInfo = getIntent().getParcelableExtra("appInfo");
@@ -136,9 +165,9 @@ public class DetailActivity extends AppCompatActivity implements RefreshManager.
         mTvTitle.setText(appInfo.getAppName());
 
         if (!isNotLoadBitmap) {
-            Glide.with(this).load(appInfo.getIcon()).asBitmap().into(mIvIcon);
+            Glide.with(this).load(appInfo.getIcon()).into(mIvIcon);
         } else {
-            Glide.with(this).load(R.drawable.ic_place_holder).asBitmap().into(mIvIcon);
+            Glide.with(this).load(R.drawable.ic_place_holder).into(mIvIcon);
         }
 
         mTvCompany.setText(appInfo.getSize() + "|" + appInfo.getCompany());
@@ -191,8 +220,10 @@ public class DetailActivity extends AppCompatActivity implements RefreshManager.
         context.startActivity(intent);
     }
 
-    @OnClick({R.id.search_iv_back, R.id.detail_iv_collect, R.id.detail_tv_download, R.id.detail_iv_share,
-            R.id.detail_tv_same_app})
+//    @OnClick
+//            ({R.id.search_iv_back, R.id.detail_iv_collect, R.id.detail_tv_download, R.id.detail_iv_share,
+//            R.id.detail_tv_same_app})
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_iv_back:

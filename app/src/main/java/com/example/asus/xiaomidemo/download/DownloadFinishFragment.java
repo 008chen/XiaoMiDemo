@@ -1,9 +1,11 @@
 package com.example.asus.xiaomidemo.download;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+//import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +17,8 @@ import com.lzy.okserver.download.DownloadTask;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//// import butterknife.BindView;
+//// import butterknife.ButterKnife;
 
 /**
  * Created by asus on 2017/10/31.
@@ -24,7 +26,7 @@ import butterknife.ButterKnife;
  */
 
 public class DownloadFinishFragment extends BaseFragment {
-    @BindView(R.id.downloadfinish_rv_downloadfinish)
+//    // @BindView(R.id.downloadfinish_rv_downloadfinish)
     RecyclerView mRvDownloadfinish;
 
     private static List<DownloadTask> taskList;
@@ -35,7 +37,8 @@ public class DownloadFinishFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_downloadfinish, container, false);
-        ButterKnife.bind(this, view);
+//        // ButterKnife.bind(this, view);
+        mRvDownloadfinish= view.findViewById(R.id.downloadfinish_rv_downloadfinish);
         initView();
         return view;
     }

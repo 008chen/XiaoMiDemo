@@ -3,12 +3,12 @@ package com.example.asus.xiaomidemo.kind.more;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -23,22 +23,22 @@ import com.flyco.tablayout.SlidingTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
+// import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/10/25.
  */
 
 public class KindDetailActivity extends AppCompatActivity {
-    @BindView(R.id.kind_sliding_tab_layout)
+    // @BindView(R.id.kind_sliding_tab_layout)
     SlidingTabLayout mSlidingTabLayout;
-    @BindView(R.id.kind_view_pager)
+    // @BindView(R.id.kind_view_pager)
     ViewPager mViewPager;
-    @BindView(R.id.search_toolbar)
+    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.detail_tv_title)
+    // @BindView(R.id.detail_tv_title)
     TextView mTvTitle;
 
     private int category;
@@ -48,7 +48,7 @@ public class KindDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kind_detail);
-        ButterKnife.bind(this);
+       //  // ButterKnife.bind(this);
 
         category = getIntent().getIntExtra("category", 0);
         title = getIntent().getStringExtra("title");
@@ -117,7 +117,7 @@ public class KindDetailActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.search_iv_back)
+    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }

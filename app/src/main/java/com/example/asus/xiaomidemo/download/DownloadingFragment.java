@@ -1,10 +1,12 @@
 package com.example.asus.xiaomidemo.download;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SimpleItemAnimator;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
+import androidx.viewpager.widget.ViewPager;
+//import android.support.v7.widget.SimpleItemAnimator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +23,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//// import butterknife.BindView;
+//// import butterknife.ButterKnife;
 
 /**
  * Created by asus on 2017/10/31.
@@ -30,7 +32,7 @@ import butterknife.ButterKnife;
  */
 
 public class DownloadingFragment extends BaseFragment {
-    @BindView(R.id.downloading_rv_downloading)
+//    // @BindView(R.id.downloading_rv_downloading)
     RecyclerView mRvDownloading;
 
     private List<Progress> downloading;
@@ -42,8 +44,8 @@ public class DownloadingFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_downloading, container, false);
-        ButterKnife.bind(this, view);
-
+//        // ButterKnife.bind(this, view);
+        mRvDownloading = view.findViewById(R.id.downloading_rv_downloading);
         initView();
         initData();
         return view;

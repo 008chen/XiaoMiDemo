@@ -3,12 +3,14 @@ package com.example.asus.xiaomidemo.search;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+//import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
@@ -33,9 +35,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
+// import butterknife.OnClick;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -46,15 +48,15 @@ import rx.schedulers.Schedulers;
  */
 
 public class SearchAcitivity extends AppCompatActivity {
-    @BindView(R.id.search_view)
+    // @BindView(R.id.search_view)
     SearchView mSearchView;
-    @BindView(R.id.search_toolbar)
+    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.search_rv_result)
+    // @BindView(R.id.search_rv_result)
     RecyclerView mRvResult;
-    @BindView(R.id.search_refresh_layout)
+    // @BindView(R.id.search_refresh_layout)
     SmartRefreshLayout mRefreshLayout;
-    @BindView(R.id.search_rv_record)
+    // @BindView(R.id.search_rv_record)
     ListView mLvRecord;
 
     private List<AppInfo> mAppInfoList;
@@ -70,7 +72,7 @@ public class SearchAcitivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        ButterKnife.bind(this);
+       //  // ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
         initView();
@@ -300,7 +302,7 @@ public class SearchAcitivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.search_iv_back)
+    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }

@@ -3,10 +3,12 @@ package com.example.asus.xiaomidemo.detail;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,9 +22,6 @@ import com.example.asus.xiaomidemo.xiaomi.AppInfo;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/11/1.
@@ -30,18 +29,25 @@ import butterknife.OnClick;
 
 public class SameAppActivity extends AppCompatActivity {
 
-    @BindView(R.id.detail_tv_title)
+
     TextView mTvTitle;
-    @BindView(R.id.search_toolbar)
+
     Toolbar mToolbar;
-    @BindView(R.id.sameapp_rv_result)
+
     RecyclerView mRvResult;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sameapp);
-        ButterKnife.bind(this);
+//       //  // ButterKnife.bind(this);
+
+
+        mTvTitle = findViewById(R.id.detail_tv_title);
+
+        mToolbar = findViewById(R.id.search_toolbar);
+
+        mRvResult = findViewById(R.id.sameapp_rv_result);
         setSupportActionBar(mToolbar);
 
         initView();
@@ -87,7 +93,7 @@ public class SameAppActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.search_iv_back)
+//    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }

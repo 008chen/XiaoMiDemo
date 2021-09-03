@@ -1,11 +1,13 @@
 package com.example.asus.xiaomidemo;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,24 +25,32 @@ import com.flyco.tablayout.SlidingTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.main_sliding_tab_layout)
+    // @BindView(R.id.main_sliding_tab_layout)
     SlidingTabLayout mSlidingTabLayout;
-    @BindView(R.id.main_view_pager)
+    // @BindView(R.id.main_view_pager)
     ViewPager mViewPager;
-    @BindView(R.id.search_toolbar)
+    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+
+
+        mSlidingTabLayout = findViewById(R.id.main_sliding_tab_layout);
+
+        mViewPager = findViewById(R.id.main_view_pager);
+
+        mToolbar = findViewById(R.id.search_toolbar);
+
+        //  // ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
         LocalAppManager.getInstance(this);
@@ -51,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             moveTaskToBack(true);
             return true;
         }

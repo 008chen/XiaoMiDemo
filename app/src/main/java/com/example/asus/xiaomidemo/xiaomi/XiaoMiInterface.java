@@ -1,5 +1,6 @@
 package com.example.asus.xiaomidemo.xiaomi;
 
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -11,7 +12,7 @@ import rx.Observable;
 
 public interface XiaoMiInterface {
 
-    public static final String BASE_URL = "http://app.mi.com";
+    public static final String BASE_URL = "https://app.mi.com";
 
     /**
      * 精品推荐
@@ -21,7 +22,8 @@ public interface XiaoMiInterface {
     @GET("/allFeaturedList")
     Observable<String> getAllFeaturedList();
 
-
+    @GET("/allFeaturedList")
+    Call<String> getAllFeaturedList2();
     /**
      * 应用的详情页面
      */

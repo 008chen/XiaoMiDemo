@@ -1,5 +1,7 @@
 package com.example.asus.xiaomidemo.xiaomi;
 
+import android.util.Log;
+
 import com.example.asus.xiaomidemo.manage.local.LocalApp;
 
 import org.jsoup.Jsoup;
@@ -18,6 +20,29 @@ import static com.example.asus.xiaomidemo.xiaomi.XiaoMiInterface.BASE_URL;
 
 public class JsoupUtil {
 
+//    /**
+//     * 精品推荐
+//     **/
+//    public static List<AppInfo> getAPPInfoList(String result) {
+//
+//        Log.d("test", "getAPPInfoList:" + result);
+//        List<AppInfo> appInfoList = new ArrayList<>();
+//        Document document = Jsoup.parse(result);
+//        Elements elements = document.select("div.applist-wrap").first().select("ul.applist").select("li");
+//        for (int i = 0; i < elements.size(); i++) {
+//            Element element = elements.get(i);
+//            AppInfo appInfo = new AppInfo();
+//
+//            appInfo.setAppName(element.select("h5").text());
+//            appInfo.setIcon(element.select("img").attr("data-src"));
+//            appInfo.setDetailUrl(element.select("a").attr("href"));
+//            appInfo.setCategory(element.select("p.app-desc").first().text());
+////            Log.d("test", appInfo.toString());
+//            appInfoList.add(appInfo);
+//        }
+//        return appInfoList;
+//    }
+
     /**
      * 精品推荐
      **/
@@ -27,15 +52,19 @@ public class JsoupUtil {
         List<AppInfo> appInfoList = new ArrayList<>();
         Document document = Jsoup.parse(result);
         Elements elements = document.select("div.applist-wrap").first().select("ul.applist").select("li");
+        Log.d("testx", "app size: " + elements.size());
         for (int i = 0; i < elements.size(); i++) {
             Element element = elements.get(i);
             AppInfo appInfo = new AppInfo();
 
+            // app名字
             appInfo.setAppName(element.select("h5").text());
+
+            // app名字
             appInfo.setIcon(element.select("img").attr("data-src"));
             appInfo.setDetailUrl(element.select("a").attr("href"));
             appInfo.setCategory(element.select("p.app-desc").first().text());
-//            Log.d("test", appInfo.toString());
+            Log.d("testx", appInfo.toString());
             appInfoList.add(appInfo);
         }
         return appInfoList;

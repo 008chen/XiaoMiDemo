@@ -1,8 +1,9 @@
 package com.example.asus.xiaomidemo.kind.more;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import android.util.Log;
 import android.view.View;
 
@@ -22,8 +23,8 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -36,9 +37,9 @@ import rx.schedulers.Schedulers;
 public class KindDetailFragment extends LazyLoadFragment implements RefreshManager.RefreshInterface {
 
 
-    @BindView(R.id.detail_rv_result)
+    // @BindView(R.id.detail_rv_result)
     RecyclerView mRvResult;
-    @BindView(R.id.detail_refresh_layout)
+    // @BindView(R.id.detail_refresh_layout)
     SmartRefreshLayout mRefreshLayout;
 
     private int category;
@@ -58,7 +59,7 @@ public class KindDetailFragment extends LazyLoadFragment implements RefreshManag
 
     @Override
     public void initViews(View view) {
-        ButterKnife.bind(this, view);
+        // ButterKnife.bind(this, view);
         RefreshManager.getInstance().register(this);
         initView();
     }

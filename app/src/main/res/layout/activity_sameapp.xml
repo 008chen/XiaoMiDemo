@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/search_toolbar"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -39,10 +39,10 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/sameapp_rv_result"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

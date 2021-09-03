@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/search_toolbar"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -41,7 +41,7 @@
 
         </LinearLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
 
     <com.flyco.tablayout.SlidingTabLayout
@@ -54,7 +54,7 @@
         app:tl_textSelectColor="#ffffff"
         app:tl_textUnselectColor="#949699" />
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/kind_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

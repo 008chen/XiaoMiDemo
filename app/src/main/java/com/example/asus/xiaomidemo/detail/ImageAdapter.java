@@ -1,11 +1,12 @@
 package com.example.asus.xiaomidemo.detail;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.asus.xiaomidemo.R;
@@ -38,7 +39,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         String src = mSrcList.get(position);
         if (!isNotLoadBitmap) {
-            Glide.with(mContext).load(src).asBitmap().placeholder(R.drawable.ic_place_holder).into(holder.imageView);
+            Glide.with(mContext).load(src).placeholder(R.drawable.ic_place_holder).into(holder.imageView);
         }else {
             Glide.with(mContext).load(R.drawable.ic_place_holder).into(holder.imageView);
         }

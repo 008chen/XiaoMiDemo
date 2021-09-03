@@ -3,12 +3,12 @@ package com.example.asus.xiaomidemo.manage;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,9 +22,9 @@ import com.flyco.tablayout.SlidingTabLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
+// import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/10/26.
@@ -32,18 +32,18 @@ import butterknife.OnClick;
 
 public class LocalAppActivity extends AppCompatActivity {
 
-    @BindView(R.id.local_app_tab_layout)
+    // @BindView(R.id.local_app_tab_layout)
     SlidingTabLayout mTabLayout;
-    @BindView(R.id.local_app_view_pager)
+    // @BindView(R.id.local_app_view_pager)
     ViewPager mViewPager;
-    @BindView(R.id.search_toolbar)
+    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_localapp);
-        ButterKnife.bind(this);
+       //  // ButterKnife.bind(this);
 
 
         setSupportActionBar(mToolbar);
@@ -104,7 +104,7 @@ public class LocalAppActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    @OnClick(R.id.search_iv_back)
+    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }

@@ -7,8 +7,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 
 import com.example.asus.xiaomidemo.R;
@@ -22,8 +23,8 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -34,9 +35,9 @@ import rx.schedulers.Schedulers;
 
 public class LocalAppFragment extends LazyLoadFragment implements RefreshManager.RefreshInterface {
 
-    @BindView(R.id.local_app_rv_app)
+    // @BindView(R.id.local_app_rv_app)
     RecyclerView mRvApp;
-    @BindView(R.id.local_app_refresh_layout)
+    // @BindView(R.id.local_app_refresh_layout)
     SmartRefreshLayout mRefreshLayout;
 
     private List<LocalApp> localAppList;
@@ -49,7 +50,7 @@ public class LocalAppFragment extends LazyLoadFragment implements RefreshManager
 
     @Override
     public void initViews(View view) {
-        ButterKnife.bind(this, view);
+        // ButterKnife.bind(this, view);
         RefreshManager.getInstance().register(this);
         initView();
     }

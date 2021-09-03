@@ -7,8 +7,9 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,9 +22,9 @@ import com.example.asus.xiaomidemo.xiaomi.RetrofitManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
+// import butterknife.OnClick;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -35,9 +36,9 @@ import rx.schedulers.Schedulers;
 
 public class ManageFragment extends LazyLoadFragment {
 
-    @BindView(R.id.manage_rv_local)
+    // @BindView(R.id.manage_rv_local)
     RecyclerView mRvLocal;
-    @BindView(R.id.manage_tv_updateNum)
+    // @BindView(R.id.manage_tv_updateNum)
     TextView mTvUpdateNum;
 
     private List<LocalApp> localAppList;
@@ -51,8 +52,11 @@ public class ManageFragment extends LazyLoadFragment {
 
     @Override
     public void initViews(View view) {
-        ButterKnife.bind(this, view);
-
+        // ButterKnife.bind(this, view);
+        // @BindView(R.id.manage_rv_local)
+         mRvLocal = view.findViewById(R.id.manage_rv_local);
+        // @BindView(R.id.manage_tv_updateNum)
+         mTvUpdateNum = view.findViewById(R.id.manage_tv_updateNum);
         initView();
     }
 
@@ -105,7 +109,7 @@ public class ManageFragment extends LazyLoadFragment {
 
     }
 
-    @OnClick({R.id.manage_ll_localapp, R.id.manage_btn_update})
+    //  @OnClick({R.id.manage_ll_localapp, R.id.manage_btn_update})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.manage_ll_localapp:

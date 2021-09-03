@@ -4,10 +4,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
@@ -17,27 +17,27 @@ import com.bumptech.glide.Glide;
 import com.example.asus.xiaomidemo.R;
 import com.example.asus.xiaomidemo.RefreshManager;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+// import butterknife.BindView;
+// import butterknife.ButterKnife;
+// import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/11/1.
  */
 
 public class SettingActivity extends AppCompatActivity {
-    @BindView(R.id.search_toolbar)
+    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.setting_switch_load_bitmap)
+    // @BindView(R.id.setting_switch_load_bitmap)
     Switch mSwitchLoadBitmap;
-    @BindView(R.id.setting_switch_only_wifi)
+    // @BindView(R.id.setting_switch_only_wifi)
     Switch mSwitchOnlyWifi;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        ButterKnife.bind(this);
+       //  // ButterKnife.bind(this);
 
         setSupportActionBar(mToolbar);
         initView();
@@ -69,12 +69,12 @@ public class SettingActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
-    @OnClick(R.id.search_iv_back)
+    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }
 
-    @OnClick({R.id.search_iv_back, R.id.setting_ll_clear_history, R.id.setting_ll_clear_cache})
+    //  @OnClick({R.id.search_iv_back, R.id.setting_ll_clear_history, R.id.setting_ll_clear_cache})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_iv_back:

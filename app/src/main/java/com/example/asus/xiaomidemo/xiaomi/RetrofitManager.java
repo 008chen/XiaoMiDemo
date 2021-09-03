@@ -7,6 +7,7 @@ import com.example.asus.xiaomidemo.manage.local.LocalApp;
 import java.util.List;
 
 import okhttp3.OkHttpClient;
+import retrofit2.Callback;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -56,7 +57,10 @@ public class RetrofitManager {
         }
         return INSTANCE;
     }
+    public void getAllFeaturedList2(Callback<String> callback) {
+        mXiaoMiInterface.getAllFeaturedList2().enqueue(callback);
 
+    }
 
     /**
      * 精品推荐
@@ -73,7 +77,6 @@ public class RetrofitManager {
                     }
                 });
     }
-
     /**
      * 排行
      */

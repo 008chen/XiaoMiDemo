@@ -1,9 +1,10 @@
 package com.example.asus.xiaomidemo.kind;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,8 @@ import com.example.asus.xiaomidemo.setting.SettingManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+//// import butterknife.BindView;
+//// import butterknife.ButterKnife;
 
 /**
  * Created by asus on 2017/10/23.
@@ -25,7 +26,7 @@ import butterknife.ButterKnife;
  */
 
 public class KindFragment extends BaseFragment implements RefreshManager.RefreshInterface {
-    @BindView(R.id.kind_rv_kind)
+//    // @BindView(R.id.kind_rv_kind)
     RecyclerView mRvKind;
 
     private boolean isNotLoadBitmap;
@@ -37,7 +38,8 @@ public class KindFragment extends BaseFragment implements RefreshManager.Refresh
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_kind, container, false);
-        ButterKnife.bind(this, view);
+//        // ButterKnife.bind(this, view);
+        mRvKind =  view.findViewById(R.id.kind_rv_kind);
         RefreshManager.getInstance().register(this);
 
         initView();

@@ -2,9 +2,13 @@ package com.example.asus.xiaomidemo.featured;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+//import androidx.appcompat.app.AlertDialog;
+//import androidx.cardview.widget.CardView;
+import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +33,7 @@ import java.util.List;
 
 public class AppAdapter extends RecyclerView.Adapter<AppAdapter.FeaturedViewHolder> {
 
-    private List<AppInfo> mAppInfoList;
+    public List<AppInfo> mAppInfoList;
 
     private Context mContext;
 
@@ -54,7 +58,8 @@ public class AppAdapter extends RecyclerView.Adapter<AppAdapter.FeaturedViewHold
     public void onBindViewHolder(FeaturedViewHolder holder, int position) {
         final AppInfo appInfo = mAppInfoList.get(position);
         if (!isNotLoadBitmap) {
-            Glide.with(mContext).load(appInfo.getIcon()).asBitmap().placeholder(R.drawable.ic_place_holder).into(holder.ivIcon);
+            Log.d("testx","imageurl: "+appInfo.getIcon());
+            Glide.with(mContext).load(appInfo.getIcon()).placeholder(R.drawable.ic_place_holder).into(holder.ivIcon);
         } else {
             Glide.with(mContext).load(R.drawable.ic_place_holder).into(holder.ivIcon);
         }

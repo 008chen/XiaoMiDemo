@@ -2,16 +2,18 @@ package com.example.asus.xiaomidemo.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by asus on 2017/8/4.
  */
 
-public class BaseFragment extends Fragment{
+public class BaseFragment extends Fragment {
 
     private static final String TAG = "BaseFragment";
     

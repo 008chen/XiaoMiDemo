@@ -3,13 +3,15 @@ package com.example.asus.xiaomidemo.download;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.widget.RecyclerView;
+//import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.asus.xiaomidemo.R;
@@ -45,7 +47,7 @@ public class DownLoadFinishAdapter extends RecyclerView.Adapter<DownLoadFinishAd
         Progress progress = task.progress;
 
         //extra1是图标，extra2是软件大小
-        Glide.with(context).load(progress.extra1).asBitmap().into(holder.ivIcon);
+        Glide.with(context).load(progress.extra1).into(holder.ivIcon);
         holder.tvName.setText(progress.fileName);
         String size = (String) progress.extra2;
         holder.tvSize.setText(size);

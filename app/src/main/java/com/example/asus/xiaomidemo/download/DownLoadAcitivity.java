@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+//import androidx.viewpager.widget.ViewPager;
+//import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,9 +25,9 @@ import com.lzy.okserver.task.XExecutor;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+//// import butterknife.BindView;
+//// import butterknife.ButterKnife;
+//// import butterknife.OnClick;
 
 /**
  * Created by asus on 2017/10/31.
@@ -32,11 +35,11 @@ import butterknife.OnClick;
 
 public class DownLoadAcitivity extends AppCompatActivity implements XExecutor.OnAllTaskEndListener {
 
-    @BindView(R.id.donwload_sliding_tab_layout)
+//    // @BindView(R.id.donwload_sliding_tab_layout)
     SlidingTabLayout mSlidingTabLayout;
-    @BindView(R.id.download_view_pager)
+//    // @BindView(R.id.download_view_pager)
     ViewPager mViewPager;
-    @BindView(R.id.search_toolbar)
+//    // @BindView(R.id.search_toolbar)
     Toolbar mToolbar;
 
     private OkDownload mOkDownLoad;
@@ -45,8 +48,13 @@ public class DownLoadAcitivity extends AppCompatActivity implements XExecutor.On
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_download);
-        ButterKnife.bind(this);
+//       //  // ButterKnife.bind(this);
 
+        SlidingTabLayout mSlidingTabLayout = findViewById(R.id.donwload_sliding_tab_layout);
+
+        ViewPager mViewPager = findViewById(R.id.download_view_pager);
+
+         mToolbar = findViewById(R.id.search_toolbar);
         setSupportActionBar(mToolbar);
         initView();
         initDonwLoadConfig();
@@ -121,7 +129,7 @@ public class DownLoadAcitivity extends AppCompatActivity implements XExecutor.On
         return super.onOptionsItemSelected(item);
     }
 
-    @OnClick(R.id.search_iv_back)
+//    //  @OnClick(R.id.search_iv_back)
     public void onClick() {
         finish();
     }
